@@ -1,15 +1,13 @@
 from django.db import models
-from mongoengine import Document
-from mongoengine.fields import (
-   StringField,
-   ObjectIdField,
-)
 
 
 #creating model here
 class News(models.Model):
     meta={"collection","news"}
-    title=models.CharField(max_length=32)
+    url = models.CharField(max_length=100)
+    title=models.CharField(max_length=100)
     content=models.TextField()
-    #def __str__(self):
-        #return self.title
+    datePost =models.TextField()
+    language = models.CharField(default='arabic',max_length=100)
+    classe = models.IntegerField()
+
